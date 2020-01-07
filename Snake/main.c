@@ -95,6 +95,7 @@ int main() {
 		for (int i = 0; i < numberOfRow + 2; i++)
 			printf("%s", screen[i]);
 		printf("Your current length is: %d\n", length);
+		printf("Press '%c' to open options page.\n", optionsKey);
 		timePerFrame = accelerate(length);
 		Sleep(timePerFrame);
 	}
