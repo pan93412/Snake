@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <stdbool.h>
 #include "consts.h"
 #include "system.h"
@@ -178,20 +179,12 @@ char coreToScreen(int number, int length, int quaternaryVector) {
 
 int keyToQuaternary(char input, int quaternaryVector, int length) {
 	int temp = quaternaryVector;
-	switch (input) {
-		case 'D': case 'd': // >
-			temp = 0;
-			break;
-		case 'W': case 'w': // ^
-			temp = 1;
-			break;
-		case 'A': case 'a': // <
-			temp = 2;
-			break;
-		case 'S': case 's': // v
-			temp = 3;
-			break;
-	}
+	
+	if (tolower(input) == right) temp = 0;
+	if (tolower(input) == up) temp = 1;
+	if (tolower(input) == left) temp = 2;
+	if (tolower(input) == down) temp = 3;
+
 	if (length > 1) //当蛇长大于1时，蛇头不可直接反向
 		if ((quaternaryVector - temp) % 2 == 0)
 			return quaternaryVector;
