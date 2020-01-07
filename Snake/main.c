@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "consts.h"
 #include "system.h"
 #include "utilities.h"
 
@@ -66,7 +67,7 @@ int main() {
 		core[currentRow][currentColumn] = 1;
 
 		/*随机放置贪吃蛇食物，循环直到食物不位于蛇身上为止*/
-		while (judgeSeed == false) {
+		while (!judgeSeed) {
 			int tempRow = rand() % numberOfRow + 1;
 			int tempColumn = rand() % numberOfColumn + 1;
 			if (core[tempRow][tempColumn] == 0) {
