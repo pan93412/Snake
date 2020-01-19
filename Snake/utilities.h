@@ -7,11 +7,7 @@
 #define LENGTH 40
 
 void clearScreen() {
-#ifdef _WIN32
-	system("cls");
-#else
 	printf("\x1b[2J");
-#endif
 }
 
 void quaternaryToVector(int quaternaryVector, int* currentRow, int* currentColumn) {

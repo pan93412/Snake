@@ -105,9 +105,6 @@ int main() {
 	for (int i = 0; i < numberOfRow + 2; i++)
 		printf("%s", screen[i]);
 	printf("Your final length is: %d\n", length);
-#ifdef _WIN32
-	Sleep(11000);
-#endif
 	return 0;
 }
 

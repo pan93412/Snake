@@ -1,10 +1,5 @@
 ﻿#pragma once 
 
-/* for the sh*t, WIN32 */
-#ifdef _WIN32
-#include <windows.h>
-#include <conio.h>
-#else
 #include <tgmath.h>
 #include <unistd.h>
 #include <termios.h>
@@ -38,4 +33,3 @@ int _kbhit(void) {
 
 	return 0;
 }
-#endif
